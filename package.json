@@ -1,0 +1,18 @@
+{
+  "name": "expressfrog",
+  "version": "1.0.0",
+  "description": "ExpressFrog : a opinionated Node.js Express template for rapid backend development (for me and could be for you too).",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon --env-file=local.env main.js",
+    "serve": "node main.js"
+  },
+  "author": "Apratim Ray",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
