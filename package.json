@@ -1,7 +1,7 @@
 {
-  "name": "expressfrog",
+  "name": "wipecomms",
   "version": "1.0.0",
-  "description": "ExpressFrog : a opinionated Node.js Express template for rapid backend development (for me and could be for you too).",
+  "description": "wipecomms : a opinionated Node.js Express template for rapid backend development (for me and could be for you too).",
   "main": "main.js",
   "scripts": {
     "start": "nodemon --env-file=local.env main.js",
