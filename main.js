@@ -2,26 +2,25 @@
 const express = require('express');
 
 // importing all Routers
-const global_api_middleware = require("./global.json.middleware")
-const sql_module_router = require("./api/module1/sql.controller")
+const json_middleware = require("./middleware/json.middleware")
+const open_json_controller = require("./api/open.controller")
 
 // the service's Port
 const PORT = process.env.PORT;
 
-// defining the global api Router
-const global_api_router = express.Router();
+// defining the json based router
+const json_router = express.Router();
+json_router.use(express.json())
 
-// defining the decoder to be used by global api router
-global_api_router.use(express.json())
+// attaching open json endpoint middleware
+json_router.use(json_middleware)
+// attaching all the required controllers to the json endpoint
+json_router.use("/public",open_json_controller)
+// json_router.use("/private",closed_json_controller)
 
-// attaching global middlewares
-global_api_router.use(global_api_middleware)
-
-// attaching all the required routers
-global_api_router.use("/module1",sql_module_router)
 
 app = express();
-app.use("/api",express.json(),global_api_router)
+app.use("/api",json_router)
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

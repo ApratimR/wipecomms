@@ -2,7 +2,7 @@ const express = require('express');
 const person_router = express.Router();
 
 
-person_router.post("/get-name",async (req,res,next)=>{
+person_router.post("/signup",async (req,res,next)=>{
     try {
         console.log(req.body)
         return res.send(req.body);
