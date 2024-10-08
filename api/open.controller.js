@@ -7,10 +7,6 @@ const person_router = express.Router();
 person_router.post("/signup",async (req,res)=>{
     try {
         const result = req.body
-        //     let some_db_val = await db('users')
-        //   .select('name')
-        //   .orderByRaw('LENGTH(name) ASC')
-        //   .first()
         console.log(some_db_val)
         return generate_body(res,200,RESPONSE_MESSAGES[200],result)
     } catch (err) {
